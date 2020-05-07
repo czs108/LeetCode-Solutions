@@ -30,7 +30,7 @@ class Solution:
         assert len(needle) != 0
 
         n = len(needle)
-        next = [0 for i in range(n)]
+        next = [0 for _ in range(n)]
         j = 0
         for i in range(1, n):
             while j > 0 and needle[j] != needle[i]:

@@ -30,7 +30,7 @@ class Solution:
         assert len(needle) != 0
 
         n = len(needle)
-        dfa = [[0 for i in range(n)] for j in range(Solution.__ascii_num)]
+        dfa = [[0 for _ in range(n)] for _ in range(Solution.__ascii_num)]
         dfa[ord(needle[0])][0] = 1
         X = 0
         for j in range(1, n):
