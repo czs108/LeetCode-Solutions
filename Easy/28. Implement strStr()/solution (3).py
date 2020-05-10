@@ -13,26 +13,24 @@ class Solution:
 
         next = self.__buildNext(needle)
         i, j = 0, 0
-        n = len(needle)
-        while i < len(haystack) and j < n:
+        while i < len(haystack) and j < len(needle):
             while j > 0 and needle[j] != haystack[i]:
                 j = next[j - 1]
             if needle[j] == haystack[i]:
                 j += 1
             i += 1
 
-        if j == n:
-            return i - n
+        if j == len(needle):
+            return i - len(needle)
         else:
             return -1
 
     def __buildNext(self, needle: str) -> List[int]:
         assert len(needle) != 0
 
-        n = len(needle)
-        next = [0 for _ in range(n)]
+        next = [0 for _ in range(len(needle))]
         j = 0
-        for i in range(1, n):
+        for i in range(1, len(needle)):
             while j > 0 and needle[j] != needle[i]:
                 j = next[j - 1]
             if needle[i] == needle[j]:

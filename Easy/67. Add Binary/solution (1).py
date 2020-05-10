@@ -1,6 +1,6 @@
 # 67. Add Binary
 
-# Runtime: 28 ms, faster than 85.34% of Python3 online submissions for Add Binary.
+# Runtime: 32 ms, faster than 66.38% of Python3 online submissions for Add Binary.
 
 # Memory Usage: 13.9 MB, less than 5.41% of Python3 online submissions for Add Binary.
 
@@ -21,11 +21,8 @@ class Solution:
         i, j = len(a) - 1, len(b) - 1
         while 0 <= i or 0 <= j:
             n = self.__getDigit(a, i) + self.__getDigit(b, j) + cf
-            if n >= Solution.__base:
-                n %= Solution.__base
-                cf = 1
-            else:
-                cf = 0
+            cf = n // Solution.__base
+            n %= Solution.__base
             result = str(n) + result
             i -= 1
             j -= 1
@@ -36,7 +33,6 @@ class Solution:
 
     def __getDigit(self, s: str, i: int) -> int:
         assert len(s) > 0
-
         if 0 <= i and i < len(s):
             assert s[i] == '0' or s[i] == '1'
             return int(s[i])
