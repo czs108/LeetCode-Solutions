@@ -9,7 +9,6 @@ import sys
 class Solution:
     # Recursive
     def coinChange(self, coins: List[int], amount: int) -> int:
-        assert len(coins) != 0
         if amount == 0:
             return 0
 

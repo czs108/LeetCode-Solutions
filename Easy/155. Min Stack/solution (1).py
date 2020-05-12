@@ -19,18 +19,15 @@ class MinStack:
             self.__min_stack.append(x)
 
     def pop(self) -> None:
-        assert len(self.__stack) != 0
         min_val = self.getMin()
         n = self.__stack.pop()
         if n == min_val:
             self.__min_stack.pop()
 
     def top(self) -> int:
-        assert len(self.__stack) != 0
         return self.__stack[-1]
 
     def getMin(self) -> int:
-        assert len(self.__stack) != 0
         return self.__min_stack[-1]
 
 

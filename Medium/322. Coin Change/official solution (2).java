@@ -1,5 +1,9 @@
 // 322. Coin Change
 
+// Runtime: 32 ms, faster than 20.68% of Java online submissions for Coin Change.
+
+// Memory Usage: 39.1 MB, less than 5.33% of Java online submissions for Coin Change.
+
 
 public class Solution {
     // Dynamic Programming - Top down

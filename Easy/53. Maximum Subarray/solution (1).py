@@ -8,8 +8,6 @@
 class Solution:
     # Dynamic programming
     def maxSubArray(self, nums: List[int]) -> int:
-        assert len(nums) >= 1
-
         curr_max_sum = nums[0]
         max_sum = curr_max_sum
         for i in range(1, len(nums)):

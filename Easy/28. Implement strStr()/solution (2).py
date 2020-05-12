@@ -26,8 +26,6 @@ class Solution:
             return -1
 
     def __buildDFA(self, needle: str) -> List[List[int]]:
-        assert len(needle) != 0
-
         dfa = [[0 for _ in range(len(needle))] for _ in range(Solution.__ascii_num)]
         dfa[ord(needle[0])][0] = 1
         X = 0

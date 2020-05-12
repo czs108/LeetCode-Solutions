@@ -8,8 +8,6 @@
 class Solution:
     # Dynamic programming
     def maxProduct(self, nums: List[int]) -> int:
-        assert len(nums) >= 1
-
         curr_min_prdct = nums[0]
         curr_max_prdct = nums[0]
         max_prdct = curr_max_prdct

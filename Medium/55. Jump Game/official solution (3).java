@@ -14,8 +14,6 @@ enum Index {
 public class Solution {
     // Dynamic Programming - Bottom up
     public boolean canJump(int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
-
         Index[] memo = new Index[nums.length];
         Arrays.fill(memo, Index.UNKNOWN);
         memo[memo.length - 1] = Index.GOOD;

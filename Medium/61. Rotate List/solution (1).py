@@ -14,8 +14,6 @@ from typing import Tuple
 
 class Solution:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
-        assert k >= 0
-
         n, tail = self.__getTailLength(head)
         if n == 0:
             return head

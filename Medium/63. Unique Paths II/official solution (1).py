@@ -9,9 +9,7 @@ class Solution:
     # Dynamic programming
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
         m = len(obstacleGrid)
-        assert m > 0
         n = len(obstacleGrid[0])
-        assert n > 0
 
         # If the starting cell has an obstacle, then simply return as there would be
         # no paths to the destination.

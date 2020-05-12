@@ -10,8 +10,6 @@
 public class Solution {
     // Greedy
     public boolean canJump(int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
-
         int lastPos = nums.length - 1;
         for (int i = nums.length - 1; i >= 0; i--) {
             // If we can reach a GOOD index, then our position is itself GOOD.

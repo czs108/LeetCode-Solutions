@@ -26,8 +26,6 @@ class Solution:
             return -1
 
     def __buildNext(self, needle: str) -> List[int]:
-        assert len(needle) != 0
-
         next = [0 for _ in range(len(needle))]
         j = 0
         for i in range(1, len(needle)):

@@ -12,8 +12,6 @@ class Solution {
     private Index[] memo;
 
     public boolean canJump(int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
-
         memo = new Index[nums.length];
         Arrays.fill(memo, Index.UNKNOWN);
         memo[memo.length - 1] = Index.GOOD;
@@ -21,7 +19,6 @@ class Solution {
     }
 
     private boolean canJumpFromPosition(int position, int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
         if (memo[position] != Index.UNKNOWN) {
             return memo[position] == Index.GOOD ? true : false;
         }

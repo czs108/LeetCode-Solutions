@@ -7,7 +7,6 @@
 class Solution:
     # Divide and conquer
     def maxSubArray(self, nums: List[int]) -> int:
-        assert len(nums) >= 1
         return self.__maxSubArray(nums, 0, len(nums) - 1)
 
     def __maxSubArray(self, nums: List[int], left: int, right: int) -> int:
@@ -20,8 +19,6 @@ class Solution:
                 self.__maxCrossingSubArray(nums, left, mid, right))
 
     def __maxCrossingSubArray(self, nums: List[int], left: int, mid: int, right: int) -> int:
-        assert left <= mid and mid <= right
-
         curr_max_sum = nums[mid]
         left_max_sum = curr_max_sum
         for i in range(mid - 1, -1, -1):

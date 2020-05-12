@@ -7,10 +7,6 @@
 
 class Solution:
     def plusOne(self, digits: List[int]) -> List[int]:
-        assert len(digits) >= 1
-        if len(digits) > 1:
-            assert digits[0] != 0
-
         # Convert the array into a integer
         num = 0
         for i in digits:

@@ -11,7 +11,6 @@ class Solution:
         self.__count = None
 
     def uniquePaths(self, m: int, n: int) -> int:
-        assert 1 <= m and n <= 100
         self.__count = [[0 for _ in range(n)] for _ in range(m)]
         return self.__uniquePaths(m - 1, n - 1)
 

@@ -4,12 +4,10 @@
 class Solution {
     // Backtracking
     public boolean canJump(int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
         return canJumpFromPosition(0, nums);
     }
 
     private boolean canJumpFromPosition(int position, int[] nums) {
-        assert(1 <= nums.length && nums.length <= 3 * 10000);
         if (position == nums.length - 1) {
             return true;
         }
