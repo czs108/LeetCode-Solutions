@@ -1,7 +1,8 @@
 # 53. Maximum Subarray
 
-# 200 / 202 test cases passed.
-# Status: Time Limit Exceeded
+# Runtime: 140 ms, faster than 5.27% of Python3 online submissions for Maximum Subarray.
+
+# Memory Usage: 14.6 MB, less than 5.69% of Python3 online submissions for Maximum Subarray.
 
 
 class Solution:
@@ -21,13 +22,13 @@ class Solution:
     def __maxCrossingSubArray(self, nums: List[int], left: int, mid: int, right: int) -> int:
         curr_max_sum = nums[mid]
         left_max_sum = curr_max_sum
-        for i in range(mid - 1, -1, -1):
+        for i in range(mid - 1, left - 1, -1):
             curr_max_sum = curr_max_sum + nums[i]
             left_max_sum = max(curr_max_sum, left_max_sum)
 
         curr_max_sum = nums[mid + 1]
         right_max_sum = curr_max_sum
-        for i in range(mid + 2, len(nums)):
+        for i in range(mid + 2, right + 1):
             curr_max_sum = curr_max_sum + nums[i]
             right_max_sum = max(curr_max_sum, right_max_sum)
 
