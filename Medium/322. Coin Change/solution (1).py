@@ -4,7 +4,7 @@
 # Time Limit Exceeded
 
 
-import sys
+import math
 
 class Solution:
     # Recursive
@@ -12,10 +12,10 @@ class Solution:
         if amount == 0:
             return 0
 
-        count = sys.maxsize
+        count = math.inf
         for n in coins:
             if amount >= n:
                 remain = self.coinChange(coins, amount - n)
                 if remain != -1:
                     count = min(remain + 1, count)
-        return count if count != sys.maxsize else -1
+        return count if not math.isinf(count) else -1

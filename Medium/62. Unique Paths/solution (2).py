@@ -8,20 +8,20 @@
 class Solution:
     # Dynamic programming - Top down
     def __init__(self):
-        self.__count = None
+        self._count = None
 
     def uniquePaths(self, m: int, n: int) -> int:
-        self.__count = [[0 for _ in range(n)] for _ in range(m)]
-        return self.__uniquePaths(m - 1, n - 1)
+        self._count = [[0 for _ in range(n)] for _ in range(m)]
+        return self._uniquePaths(m - 1, n - 1)
 
-    def __uniquePaths(self, i: int, j: int) -> int:
+    def _uniquePaths(self, i: int, j: int) -> int:
         if i < 0 or j < 0:
             return 0
         elif i == 0 or j == 0:
             return 1
-        elif self.__count[i][j] != 0:
-            return self.__count[i][j]
+        elif self._count[i][j] != 0:
+            return self._count[i][j]
 
-        self.__count[i][j] = self.__uniquePaths(i - 1, j) + self.__uniquePaths(i, j - 1)
-        return self.__count[i][j]
+        self._count[i][j] = self._uniquePaths(i - 1, j) + self._uniquePaths(i, j - 1)
+        return self._count[i][j]
     

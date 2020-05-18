@@ -7,7 +7,7 @@ public class Solution {
         return coinChange(0, coins, amount);
     }
 
-    private int coinChange(int idxCoin, int[] coins, int amount) {
+    private static int coinChange(int idxCoin, int[] coins, int amount) {
         if (amount == 0) {
             return 0;
         }

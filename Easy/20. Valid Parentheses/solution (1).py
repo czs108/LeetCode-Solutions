@@ -6,18 +6,19 @@
 
 
 class Solution:
+    _PARENTHESES_MAP = {")": "(", "}": "{", "]": "["}
+    _LEFT_PARENTHESES = ['{', '[', '(']
+
     def isValid(self, s: str) -> bool:
-        left = [ '{', '[', '(' ]
-        dict = { '}': '{', ']': '[', ')': '(', }
         stack = []
         for c in s:
-            if c in left:
+            if c in Solution._LEFT_PARENTHESES:
                 stack.append(c)
             else:
                 if len(stack) == 0:
                     return False
                 else:
                     t = stack.pop()
-                    if dict[c] != t:
+                    if Solution._PARENTHESES_MAP[c] != t:
                         return False
         return len(stack) == 0

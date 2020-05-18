@@ -5,13 +5,13 @@
 # Memory Usage: 16.2 MB, less than 6.56% of Python3 online submissions for Single Number.
 
 
-from collections import defaultdict
+import collections
 
 class Solution:
     # Hash Table
     def singleNumber(self, nums: List[int]) -> int:
         # Iterate through all elements in `nums` and set up key/value pair.
-        hash_tab = defaultdict(int)
+        hash_tab = collections.defaultdict(int)
         for i in nums:
             hash_tab[i] += 1
 

@@ -10,7 +10,7 @@ public class Solution {
         return climbStairs(0, n);
     }
 
-    public int climbStairs(int curr, int dest) {
+    public static int climbStairs(int curr, int dest) {
         if (curr > dest) {
             return 0;
         } else if (curr == dest) {

@@ -6,17 +6,16 @@
 
 
 class Solution:
-    def __init__(self):
-        Solution.__base = 2
+    _BASE = 2
 
     def addBinary(self, a: str, b: str) -> str:
         result = ""
         cf = 0
         i, j = len(a) - 1, len(b) - 1
         while 0 <= i or 0 <= j:
-            n = self.__getDigit(a, i) + self.__getDigit(b, j) + cf
-            cf = n // Solution.__base
-            n %= Solution.__base
+            n = Solution._getDigit(a, i) + Solution._getDigit(b, j) + cf
+            cf = n // Solution._BASE
+            n %= Solution._BASE
             result = str(n) + result
             i -= 1
             j -= 1
@@ -25,7 +24,8 @@ class Solution:
             result = '1' + result
         return result
 
-    def __getDigit(self, s: str, i: int) -> int:
+    @staticmethod
+    def _getDigit(s: str, i: int) -> int:
         if 0 <= i and i < len(s):
             return int(s[i])
         else:

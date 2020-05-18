@@ -11,7 +11,7 @@ class Solution:
         if len(needle) == 0:
             return 0
 
-        next = self.__buildNext(needle)
+        next = Solution._buildNext(needle)
         i, j = 0, 0
         while i < len(haystack) and j < len(needle):
             while j > 0 and needle[j] != haystack[i]:
@@ -25,7 +25,8 @@ class Solution:
         else:
             return -1
 
-    def __buildNext(self, needle: str) -> List[int]:
+    @staticmethod
+    def _buildNext(needle: str) -> List[int]:
         next = [0 for _ in range(len(needle))]
         j = 0
         for i in range(1, len(needle)):

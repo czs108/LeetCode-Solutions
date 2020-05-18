@@ -13,7 +13,7 @@ public class Solution {
         return res[0][0];
     }
 
-    private int[][] pow(int[][] a, int n) {
+    private static int[][] pow(int[][] a, int n) {
         int[][] ret = {{1, 0}, {0, 1}};
         while (n > 0) {
             if ((n & 1) == 1) {
@@ -27,7 +27,7 @@ public class Solution {
         return ret;
     }
 
-    private int[][] multiply(int[][] a, int[][] b) {
+    private static int[][] multiply(int[][] a, int[][] b) {
         int[][] c = new int[2][2];
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j < 2; j++) {

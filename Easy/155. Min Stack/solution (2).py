@@ -5,33 +5,33 @@
 # Memory Usage: 17.4 MB, less than 5.36% of Python3 online submissions for Min Stack.
 
 
-import sys
+import math
 
 class MinStack:
     def __init__(self):
         """
         initialize your data structure here.
         """
-        self.__stack = []
-        self.__min_val = sys.maxsize
+        self._stack = []
+        self._min_val = math.inf
 
     def push(self, x: int) -> None:
-        if x <= self.__min_val:
-            self.__stack.append(self.__min_val)
-            self.__min_val = x
-        self.__stack.append(x)
+        if x <= self._min_val:
+            self._stack.append(self._min_val)
+            self._min_val = x
+        self._stack.append(x)
 
     def pop(self) -> None:
         min_val = self.getMin()
-        n = self.__stack.pop()
+        n = self._stack.pop()
         if n == min_val:
-            self.__min_val = self.__stack.pop()
+            self._min_val = self._stack.pop()
 
     def top(self) -> int:
-        return self.__stack[-1]
+        return self._stack[-1]
 
     def getMin(self) -> int:
-        return self.__min_val
+        return self._min_val
 
 
 # Your MinStack object will be instantiated and called as such:

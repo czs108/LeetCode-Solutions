@@ -14,14 +14,14 @@ from typing import Tuple
 
 class Solution:
     def rotateRight(self, head: ListNode, k: int) -> ListNode:
-        n, tail = self.__getTailLength(head)
+        n, tail = Solution._getTailLength(head)
         if n == 0:
             return head
         k %= n
         if k == 0:
             return head
 
-        before_new_head = ListNode()
+        before_new_head = head
         for _ in range(n - k - 1):
             before_new_head = before_new_head.next
         new_head = before_new_head.next
@@ -29,7 +29,8 @@ class Solution:
         tail.next = head
         return new_head
 
-    def __getTailLength(self, head: ListNode) -> Tuple[int, ListNode]:
+    @staticmethod
+    def _getTailLength(head: ListNode) -> Tuple[int, ListNode]:
         if not head:
             return 0, None
 

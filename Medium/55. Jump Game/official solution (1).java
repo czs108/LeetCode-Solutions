@@ -7,7 +7,7 @@ class Solution {
         return canJumpFromPosition(0, nums);
     }
 
-    private boolean canJumpFromPosition(int position, int[] nums) {
+    private static boolean canJumpFromPosition(int position, int[] nums) {
         if (position == nums.length - 1) {
             return true;
         }

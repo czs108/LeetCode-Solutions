@@ -68,7 +68,7 @@ class Solution {
         return true;
     }
 
-    public boolean check(TreeNode p, TreeNode q) {
+    public static boolean check(TreeNode p, TreeNode q) {
         if (p == null && q == null) {
             return true;
         } else if (q == null || p == null) {

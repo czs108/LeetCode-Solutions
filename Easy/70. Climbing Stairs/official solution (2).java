@@ -6,13 +6,16 @@
 
 
 public class Solution {
+
+    private int memo[] = null;
+
     // Recursion with Memoization
     public int climbStairs(int n) {
-        int memo[] = new int[n + 1];
-        return climbStairs(0, n, memo);
+        memo = new int[n + 1];
+        return _climbStairs(0, n);
     }
 
-    public int climbStairs(int curr, int dest, int memo[]) {
+    public int _climbStairs(int curr, int dest) {
         if (curr > dest) {
             return 0;
         } else if (curr == dest) {
@@ -22,7 +25,7 @@ public class Solution {
         }
 
         // Store the result at each step in `memo` array and directly returning the result from the `memo` array whenever that function is called again.
-        memo[curr] = climbStairs(curr + 1, dest, memo) + climbStairs(curr + 2, dest, memo);
+        memo[curr] = _climbStairs(curr + 1, dest) + _climbStairs(curr + 2, dest);
         return memo[curr];
     }
 }

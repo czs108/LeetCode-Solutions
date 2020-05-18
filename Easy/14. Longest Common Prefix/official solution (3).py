@@ -11,18 +11,20 @@ class Solution:
         if len(strs) == 0:
             return ""
         else:
-            return self.__longestCommonPrefix(strs, 0, len(strs) - 1)
+            return Solution._longestCommonPrefix(strs, 0, len(strs) - 1)
 
-    def __longestCommonPrefix(self, strs: List[str], left: int, right: int) -> str:
+    @staticmethod
+    def _longestCommonPrefix(strs: List[str], left: int, right: int) -> str:
         if left >= right:
             return strs[left]
         else:
             mid = left + (right - left) // 2
-            lcpLeft = self.__longestCommonPrefix(strs, left, mid)
-            lcpRight = self.__longestCommonPrefix(strs, mid + 1, right)
-            return self.__commonPrefix(lcpLeft, lcpRight)
+            lcpLeft = Solution._longestCommonPrefix(strs, left, mid)
+            lcpRight = Solution._longestCommonPrefix(strs, mid + 1, right)
+            return Solution._commonPrefix(lcpLeft, lcpRight)
 
-    def __commonPrefix(self, left: str, right: str) -> str:
+    @staticmethod
+    def _commonPrefix(left: str, right: str) -> str:
         min_len = min(len(left), len(right))
         for i in range(min_len):
             if left[i] != right[i]:

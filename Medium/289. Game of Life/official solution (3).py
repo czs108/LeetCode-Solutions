@@ -5,6 +5,7 @@
 # Memory Usage: 14.1 MB, less than 10.00% of Python3 online submissions for Game of Life.
 
 
+from typing import Set, Tuple
 import collections
 
 class Solution:
@@ -14,12 +15,13 @@ class Solution:
         Do not return anything, modify board in-place instead.
         """
         live = {(i, j) for i, row in enumerate(board) for j, live in enumerate(row) if live}
-        live = self.__gameOfLifeInfinite(live)
+        live = Solution._gameOfLifeInfinite(live)
         for i, row in enumerate(board):
             for j in range(len(row)):
                 row[j] = int((i, j) in live)
 
-    def __gameOfLifeInfinite(self, live):
+    @staticmethod
+    def _gameOfLifeInfinite(live: Set[Tuple[int, int]]) -> Set[Tuple[int, int]]:
         ctr = collections.Counter((I, J)
                                 for i, j in live
                                 for I in range(i - 1, i + 2)

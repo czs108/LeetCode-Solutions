@@ -6,18 +6,19 @@
 
 
 class Solution:
-    def romanToInt(self, s: str) -> int:
-        dict = { "I": 1,\
+    _NUM_MAP = { "I": 1,\
                  "V": 5,\
                  "X": 10,\
                  "L": 50,\
                  "C": 100,\
                  "D": 500,\
                  "M": 1000 }
+
+    def romanToInt(self, s: str) -> int:
         prev = 0
         sum = 0
         for i in s:
-            curr = dict[i]
+            curr = Solution._NUM_MAP[i]
             # Roman numerals are usually written largest to smallest from left to right.
             if curr <= prev:
                 sum += curr

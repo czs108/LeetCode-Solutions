@@ -2,14 +2,14 @@
 
 
 class Solution:
+    # Neighbors array to find 8 neighboring cells for a given cell
+    _NEIGHBORS = [(1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1)]
+
     # Make a copy of the original board
     def gameOfLife(self, board: List[List[int]]) -> None:
         """
         Do not return anything, modify board in-place instead.
         """
-        # Neighbors array to find 8 neighboring cells for a given cell
-        neighbors = [(1, 0), (1, -1), (0, -1), (-1, -1), (-1, 0), (-1, 1), (0, 1), (1, 1)]
-
         rows = len(board)
         cols = len(board[0])
 
@@ -19,7 +19,7 @@ class Solution:
 
                 # For each cell count the number of live neighbors.
                 live_neighbors = 0
-                for neighbor in neighbors:
+                for neighbor in Solution._NEIGHBORS:
 
                     # row and column of the neighboring cell
                     r = (row + neighbor[0])

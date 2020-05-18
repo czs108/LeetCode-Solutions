@@ -7,14 +7,13 @@
 
 class Solution:
     # Knuth-Morris-Pratt - DFA
-    def __init__(self):
-        Solution.__ascii_num = 256
+    _ASCII_NUM = 256
 
     def strStr(self, haystack: str, needle: str) -> int:
         if len(needle) == 0:
             return 0
 
-        dfa = self.__buildDFA(needle)
+        dfa = Solution._buildDFA(needle)
         i, j = 0, 0
         # `j` is the number of characters in `needle` that have been matched.
         while i < len(haystack) and j < len(needle):
@@ -25,13 +24,14 @@ class Solution:
         else:
             return -1
 
-    def __buildDFA(self, needle: str) -> List[List[int]]:
-        dfa = [[0 for _ in range(len(needle))] for _ in range(Solution.__ascii_num)]
+    @classmethod
+    def _buildDFA(needle: str) -> List[List[int]]:
+        dfa = [[0 for _ in range(len(needle))] for _ in range(cls._ASCII_NUM)]
         dfa[ord(needle[0])][0] = 1
         X = 0
         for j in range(1, len(needle)):
             # Copy mismatch cases.
-            for c in range(Solution.__ascii_num):
+            for c in range(cls._ASCII_NUM):
                 dfa[c][j] = dfa[c][X]
             # Set match case.
             dfa[ord(needle[j])][j] = j + 1
