@@ -13,7 +13,7 @@ Implement the following operations of a stack using queues.
 
 **Example:**
 
-```
+```c++
 MyStack stack = new MyStack();
 
 stack.push(1);
