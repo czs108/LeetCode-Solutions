@@ -4,12 +4,12 @@
 
 ![Cover](Cover.png)
 
-Solutions and notes for [LeetCode](https://leetcode.com/) problems.
+Solutions and notes for [***LeetCode***](https://leetcode.com/) problems.
 
 ## Contact
 
-***GitHub:*** https://github.com/czs108/
+***GitHub***: https://github.com/czs108/
 
-***E-Mail:*** chenzs108@outlook.com
+***E-Mail***: chenzs108@outlook.com
 
-***WeChat:*** chenzs108
+***WeChat***: chenzs108
