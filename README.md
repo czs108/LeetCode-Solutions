@@ -10,6 +10,8 @@ Solutions and notes for [***LeetCode***](https://leetcode.com/) problems.
 
 ***GitHub***: https://github.com/czs108/
 
+***LeetCode***: https://leetcode.com/czs108/
+
 ***E-Mail***: chenzs108@outlook.com
 
 ***WeChat***: chenzs108
