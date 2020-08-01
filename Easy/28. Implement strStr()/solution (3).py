@@ -12,15 +12,15 @@ class Solution:
             return 0
 
         next = Solution._buildNext(needle)
-        i, j = 0, 0
-        while i < len(haystack) and j < len(needle):
-            while j > 0 and needle[j] != haystack[i]:
-                j = next[j - 1]
-            if needle[j] == haystack[i]:
-                j += 1
+        i, match_len = 0, 0
+        while i < len(haystack) and match_len < len(needle):
+            while match_len > 0 and needle[match_len] != haystack[i]:
+                match_len = next[match_len - 1]
+            if needle[match_len] == haystack[i]:
+                match_len += 1
             i += 1
 
-        if j == len(needle):
+        if match_len == len(needle):
             return i - len(needle)
         else:
             return -1
@@ -28,11 +28,11 @@ class Solution:
     @staticmethod
     def _buildNext(needle: str) -> List[int]:
         next = [0 for _ in range(len(needle))]
-        j = 0
-        for i in range(1, len(needle)):
-            while j > 0 and needle[j] != needle[i]:
-                j = next[j - 1]
-            if needle[i] == needle[j]:
-                j += 1
-            next[i] = j
+        left = 0
+        for right in range(1, len(needle)):
+            while left > 0 and needle[left] != needle[right]:
+                left = next[left - 1]
+            if needle[right] == needle[left]:
+                left += 1
+            next[right] = left
         return next
