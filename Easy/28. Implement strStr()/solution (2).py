@@ -25,7 +25,7 @@ class Solution:
             return -1
 
     @classmethod
-    def _buildDFA(needle: str) -> List[List[int]]:
+    def _buildDFA(cls, needle: str) -> List[List[int]]:
         dfa = [[0 for _ in range(len(needle))] for _ in range(cls._ASCII_NUM)]
         dfa[ord(needle[0])][0] = 1
         X = 0
