@@ -1,6 +1,6 @@
 # 189. Rotate Array
 
-> Easy
+> Medium
 
 ------
 
@@ -34,6 +34,6 @@ rotate 2 steps to the right: [3,99,-1,-100]
 
 **Constraints:**
 
-- `1 <= nums.length <= 2 * 10^4`
-- It's guaranteed that `nums[i]` fits in a 32 bit-signed integer.
-- `k >= 0`
+- 1 <= `nums.length` <= 2 * 10<sup>4</sup>
+- -2<sup>31</sup> <= `nums[i]` <= 2<sup>31</sup> - 1
+- 0 <= `k` <= 105
