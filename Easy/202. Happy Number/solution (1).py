@@ -15,7 +15,7 @@ class Solution:
                 return False
             prevs.add(n)
         return True
-    
+
     @staticmethod
     def calcSum(n: int) -> int:
         sum = 0
