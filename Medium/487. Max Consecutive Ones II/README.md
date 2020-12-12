@@ -22,4 +22,5 @@ After flipping, the maximum number of consecutive 1s is 4.
 - The length of input array is a positive integer and will not exceed 10000.
 
 **Follow up:**
+
 What if the input numbers come in one by one as an **infinite stream**? In other words, you can't store all numbers coming from the stream as it's too large to hold in memory. Could you solve it efficiently?
